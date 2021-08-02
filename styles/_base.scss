@@ -1,5 +1,7 @@
-.container {
-  section {
-    color: green;
-  }
+$bg-color: #fbfbfb;
+
+@mixin p-style {
+  font-size: 14px;
+  line-height: 17px;
+  color: #718096;
 }

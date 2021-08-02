@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Hero from "../components/hero/hero";
 import Logo from "../components/Logo/Logo";
 import SearchBar from "../components/searchBar/SearchBar";
 import Social from "../components/socmedIcon/Social";
@@ -22,6 +23,11 @@ export default function Home() {
         </div>
         <Social />
       </nav>
+      <content>
+        <article>
+          <Hero />
+        </article>
+      </content>
     </>
   );
 }

@@ -1,0 +1,17 @@
+@import "../../styles/main.scss";
+
+.hero {
+  background-color: $bg-color;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 72px 110px;
+  .hero-text {
+    @include p-style;
+  }
+  .hero-pic {
+    width: 100%;
+    img {
+      object-fit: cover;
+    }
+  }
+}

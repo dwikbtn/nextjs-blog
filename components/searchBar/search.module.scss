@@ -1,0 +1,26 @@
+.searchBar {
+  display: flex;
+  margin: auto;
+  input {
+    margin-left: 10px;
+    width: 66px;
+    height: 24px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .noOutline:focus {
+    outline: none;
+  }
+  ::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* 600 */
+    color: #718096;
+  }
+}

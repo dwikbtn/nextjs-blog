@@ -1,16 +1,27 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Logo from "../components/Logo/Logo";
+import SearchBar from "../components/searchBar/SearchBar";
+import Social from "../components/socmedIcon/Social";
+
+import style from "../styles/pages/index.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Late Me | blog</title>
         <meta name="Late Me" content="Dwi Darma Blog's" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>Hi world</body>
-    </div>
+      <nav className={style.nav + " containers"}>
+        <Logo />
+        <SearchBar />
+        <div className={style["nav-menu"]}>
+          <p>Home</p>
+          <p>articles</p>
+        </div>
+        <Social />
+      </nav>
+    </>
   );
 }

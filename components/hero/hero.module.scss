@@ -1,15 +1,30 @@
 @import "../../styles/main.scss";
 
 .hero {
+  margin-top: 30px;
   background-color: $bg-color;
   display: flex;
   justify-content: space-evenly;
   padding: 72px 110px;
+  width: 100%;
+  align-items: center;
   .hero-text {
     @include p-style;
+    font-size: 30px;
+    line-height: 36px;
+    width: 50%;
+    h1 {
+      font-weight: bold;
+      font-size: 54px;
+      line-height: 65px;
+      color: black;
+    }
+    p {
+      margin-top: 30px;
+    }
   }
   .hero-pic {
-    width: 100%;
+    width: 50%;
     img {
       object-fit: cover;
     }

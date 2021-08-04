@@ -1,12 +1,26 @@
 import Head from "next/head";
 import Hero from "../components/hero/hero";
 import Logo from "../components/Logo/Logo";
+import News from "../components/news/News";
 import SearchBar from "../components/searchBar/SearchBar";
 import Social from "../components/socmedIcon/Social";
 
 import style from "../styles/pages/index.module.scss";
 
-export default function Home() {
+import data from "../public/placeholder.json";
+
+export async function getStaticProps() {
+  const allPostsData = data.posts.map((element) => {
+    return element;
+  });
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <>
       <Head>
@@ -27,6 +41,7 @@ export default function Home() {
         <article>
           <Hero />
         </article>
+        <News allPosts={allPostsData} />
       </content>
     </>
   );

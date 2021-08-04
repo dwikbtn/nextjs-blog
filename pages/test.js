@@ -1,5 +1,8 @@
 import React from "react";
+import News from "../components/news/News";
 
-export const test = () => {
-  return <h1></h1>;
+const Test = () => {
+  return <News />;
 };
+
+export default Test;

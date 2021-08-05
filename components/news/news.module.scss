@@ -9,4 +9,46 @@
     width: auto;
     height: 300px;
   }
+  .news-highlight {
+    width: auto;
+    height: 200px;
+  }
+}
+
+.article-latest {
+  margin-top: 40px;
+  display: flex;
+  .article-text {
+    width: 50%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+  }
+  .article-title {
+    @include h-style;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .article-content {
+    @include p-style;
+    margin: 25px auto;
+  }
+  .article-footer {
+    display: flex;
+    justify-content: space-between;
+    .date {
+      @include p-style;
+    }
+    .read-more {
+      @include h-style;
+    }
+  }
+  .image-container-latest {
+    width: 550px;
+    img {
+      object-fit: cover;
+      width: auto;
+      height: auto;
+    }
+  }
 }

@@ -4,4 +4,10 @@ $bg-color: #fbfbfb;
   font-size: 14px;
   line-height: 17px;
   color: #718096;
+  text-align: justify;
+}
+
+@mixin h-style {
+  color: #2d3748;
+  font-weight: bold;
 }

@@ -18,6 +18,8 @@
 .article-latest {
   margin-top: 40px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   .article-text {
     width: 50%;
     padding: 45px;
@@ -45,6 +47,10 @@
   }
   .image-container-latest {
     width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
       object-fit: cover;
       width: auto;

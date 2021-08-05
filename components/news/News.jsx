@@ -7,26 +7,28 @@ function News({ allPosts }) {
     allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ...";
   console.log(clamped);
   const articleLatest = (
-    <div className={style["article-latest"]}>
-      <div className={style["article-text"]}>
-        <div className={style["article-title"]}>
-          <h1>{allPosts[0].title}</h1>
+    <div className="card">
+      <div className={style["article-latest"]}>
+        <div className={style["article-text"]}>
+          <div className={style["article-title"]}>
+            <h1>{allPosts[0].title}</h1>
+          </div>
+          <div className={style["article-content"]}>
+            <p>{clamped}</p>
+          </div>
+          <div className={style["article-footer"]}>
+            <div className={style.date}>{allPosts[0].date}</div>
+            <div className={style["read-more"]}>Read more</div>
+          </div>
         </div>
-        <div className={style["article-content"]}>
-          <p>{clamped}</p>
+        <div className={style["image-container-latest"]}>
+          <Image
+            src={allPosts[0].imageURL}
+            alt={allPosts[0].title}
+            width={435}
+            height={245}
+          />
         </div>
-        <div className={style["article-footer"]}>
-          <div className={style.date}>{allPosts[0].date}</div>
-          <div className={style["read-more"]}>Read more</div>
-        </div>
-      </div>
-      <div className={style["image-container-latest"]}>
-        <Image
-          src={allPosts[0].imageURL}
-          alt={allPosts[0].title}
-          width={435}
-          height={245}
-        />
       </div>
     </div>
   );

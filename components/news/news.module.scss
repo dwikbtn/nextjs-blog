@@ -16,10 +16,7 @@
 }
 
 .article-latest {
-  margin-top: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   .article-text {
     width: 50%;
     padding: 45px;
@@ -50,11 +47,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     img {
       object-fit: cover;
-      width: auto;
-      height: auto;
+    }
+  }
+}
+
+.article-others {
+  .article-title {
+    @include h-style;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 20px;
+  }
+  .article-content {
+    @include p-style;
+    padding: 18px;
+  }
+  .article-footer {
+    display: flex;
+    padding: 18px;
+    justify-content: space-between;
+    .date {
+      @include p-style;
     }
   }
 }

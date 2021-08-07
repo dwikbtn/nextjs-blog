@@ -1,12 +1,13 @@
 .containers {
   margin: 0 85px;
 }
-//margin
+//grid
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 40px 35px;
+  text-align: center;
 }
 .grid-bg {
   grid-column: 1/4;

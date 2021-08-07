@@ -3,9 +3,7 @@ import style from "./news.module.scss";
 import Image from "next/image";
 
 function News({ allPosts }) {
-  const clamped =
-    allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ...";
-  console.log(clamped);
+  allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ...";
   const articleLatest = (
     <div className="card">
       <div className={style["article-latest"]}>
@@ -14,7 +12,9 @@ function News({ allPosts }) {
             <h1>{allPosts[0].title}</h1>
           </div>
           <div className={style["article-content"]}>
-            <p>{clamped}</p>
+            <p>
+              {allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ..."}
+            </p>
           </div>
           <div className={style["article-footer"]}>
             <div className={style.date}>{allPosts[0].date}</div>
@@ -25,7 +25,7 @@ function News({ allPosts }) {
           <Image
             src={allPosts[0].imageURL}
             alt={allPosts[0].title}
-            width={435}
+            width={500}
             height={245}
           />
         </div>
@@ -33,27 +33,41 @@ function News({ allPosts }) {
     </div>
   );
 
-  const article = (
-    <div className="article">
-      <div className="article-title">long established</div>
-      <div className="article-content">
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. The point of
-        using Lorem Ipsum is that....
-      </div>
-      <div className="article-footer">
-        <div className="date">11/11/11</div>
-        <div className="read-more">Read more</div>
+  //get the other post than latest
+  const posts = allPosts.slice(1, 4).map((post) => (
+    <div className={style["news-panel"]} key={post._id}>
+      <div className="card">
+        <div className={style["article-others"]}>
+          <div className={style["image-container-latest"]}>
+            <Image
+              src={post.imageURL}
+              alt={post.title}
+              width={500}
+              height={245}
+            />
+          </div>
+          <div className={style["article-text"]}>
+            <div className={style["article-title"]}>
+              <h1>{post.title}</h1>
+            </div>
+            <div className={style["article-content"]}>
+              <p>{post.context.split(" ").slice(0, 30).join(" ") + " ..."}</p>
+            </div>
+            <div className={style["article-footer"]}>
+              <div className={style.date}>{post.date}</div>
+              <div className={style["read-more"]}>Read more</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  );
+  ));
+
   return (
     <article className={"containers grid-container " + style.news}>
       <div className={"grid-bg " + style["news-latest"]}>{articleLatest}</div>
-      <div className={style["news-panel"]}>Test</div>
-      <div className={style["news-panel"]}>Test</div>
-      <div className={style["news-panel"]}>Test</div>
-      <div className={"grid-bg " + style["news-latest"]}>Test</div>
+      {posts}
+      <div className={"grid-bg " + style["news-highlight"]}></div>
     </article>
   );
 }

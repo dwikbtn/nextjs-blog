@@ -65,7 +65,6 @@ function News({ allPosts }) {
 
   // filter to get the highlighted post
   const filteredHighlight = allPosts.filter((post) => post.highlight === true);
-  console.log(filteredHighlight);
   const highlightedPost = (
     <div className="card">
       <div className={style["article-highlight"]}>

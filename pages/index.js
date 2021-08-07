@@ -8,6 +8,7 @@ import Social from "../components/socmedIcon/Social";
 import style from "../styles/pages/index.module.scss";
 
 import data from "../public/placeholder.json";
+import Footer from "../components/footer/footer";
 
 export async function getStaticProps() {
   const allPostsData = data.posts.map((element) => {
@@ -43,6 +44,9 @@ export default function Home({ allPostsData }) {
         </article>
         <News allPosts={allPostsData} />
       </content>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

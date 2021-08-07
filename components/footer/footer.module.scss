@@ -1,0 +1,15 @@
+@import "../../styles/main.scss";
+
+.footer {
+  margin-top: 110px;
+  border-top: 1px solid #e8e8e8;
+  width: 100%;
+  .footer-context {
+    padding: 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    span {
+      @include h-style;
+    }
+  }
+}

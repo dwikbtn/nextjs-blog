@@ -3,15 +3,12 @@
 .news {
   .news-latest {
     width: auto;
-    height: 200px;
   }
   .news-panel {
     width: auto;
-    height: 300px;
   }
   .news-highlight {
     width: auto;
-    height: 200px;
   }
 }
 
@@ -70,6 +67,44 @@
     justify-content: space-between;
     .date {
       @include p-style;
+    }
+  }
+}
+
+.article-highlight {
+  background-color: $bg-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .article-text {
+    width: 50%;
+    padding: 100px 65px;
+    .article-title {
+      @include h-style;
+      font-size: 20px;
+      line-height: 24px;
+      margin-top: 20px;
+    }
+    .article-content {
+      @include p-style;
+      margin-top: 25px;
+    }
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 31px;
+      .date {
+        @include p-style;
+      }
+      .read-more {
+        @include h-style;
+      }
+    }
+  }
+  .image-container-highlight {
+    height: 100%;
+    img {
+      object-fit: cover;
     }
   }
 }

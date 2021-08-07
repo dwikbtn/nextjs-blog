@@ -63,11 +63,46 @@ function News({ allPosts }) {
     </div>
   ));
 
+  // filter to get the highlighted post
+  const filteredHighlight = allPosts.filter((post) => post.highlight === true);
+  console.log(filteredHighlight);
+  const highlightedPost = (
+    <div className="card">
+      <div className={style["article-highlight"]}>
+        <div className={style["article-text"]}>
+          <div className={style["article-title"]}>
+            <h1>{filteredHighlight[0].title}</h1>
+          </div>
+          <div className={style["article-content"]}>
+            <p>
+              {filteredHighlight[0].context.split(" ").slice(0, 50).join(" ") +
+                " ..."}
+            </p>
+          </div>
+          <div className={style["article-footer"]}>
+            <div className={style.date}>{filteredHighlight[0].date}</div>
+            <div className={style["read-more"]}>Read more</div>
+          </div>
+        </div>
+        <div className={style["image-container-highlight"]}>
+          <Image
+            src={filteredHighlight[0].imageURL}
+            alt={filteredHighlight[0].title}
+            layout="fixed"
+            width={500}
+            height={439}
+          />
+        </div>
+      </div>
+    </div>
+  );
   return (
     <article className={"containers grid-container " + style.news}>
       <div className={"grid-bg " + style["news-latest"]}>{articleLatest}</div>
       {posts}
-      <div className={"grid-bg " + style["news-highlight"]}></div>
+      <div className={"grid-bg " + style["news-highlight"]}>
+        {highlightedPost}
+      </div>
     </article>
   );
 }

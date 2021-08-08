@@ -9,6 +9,7 @@ import style from "../styles/pages/index.module.scss";
 
 import data from "../public/placeholder.json";
 import Footer from "../components/footer/footer";
+import Pagination from "../components/pagination/pagination";
 
 export async function getStaticProps() {
   const allPostsData = data.posts.map((element) => {
@@ -43,6 +44,7 @@ export default function Home({ allPostsData }) {
           <Hero />
         </article>
         <News allPosts={allPostsData} />
+        <Pagination />
       </content>
       <footer>
         <Footer />

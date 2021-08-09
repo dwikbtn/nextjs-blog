@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function Pagination() {
   return (
     <div className={"containers button " + style["see-more-btn"]}>
-      <div className={style["see-more"]}>
+      <a href="#" className={style["see-more"]}>
         <p>See More</p>
         <Image src={downArrow} alt="see more" />
-      </div>
+      </a>
     </div>
   );
 }

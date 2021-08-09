@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Hero from "../components/hero/hero";
 import Logo from "../components/Logo/Logo";
@@ -11,18 +12,16 @@ import data from "../public/placeholder.json";
 import Footer from "../components/footer/footer";
 import Pagination from "../components/pagination/pagination";
 
-export async function getStaticProps() {
-  const allPostsData = data.posts.map((element) => {
-    return element;
-  });
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+//state
 
-export default function Home({ allPostsData }) {
+export default function Home({ recentPostData, otherPosts }) {
+  // const [post, setPost] = useState(null);
+
+  // useEffect(() => {
+  // fetch("https://jsonplaceholder.typicode.com/posts/")
+  //   .then((response) => response.json())
+  //   .then((json) => setPost(json));
+  // }, []);
   return (
     <>
       <Head>
@@ -43,7 +42,7 @@ export default function Home({ allPostsData }) {
         <article>
           <Hero />
         </article>
-        <News allPosts={allPostsData} />
+        <News allPosts={recentPostData} />
         <Pagination />
       </content>
       <footer>
@@ -51,4 +50,23 @@ export default function Home({ allPostsData }) {
       </footer>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const recentPostData = data.posts.map((element) => {
+    return element;
+  });
+
+  let otherPosts = [];
+
+  fetch("https://jsonplaceholder.typicode.com/posts/")
+    .then((response) => response.json())
+    .then((json) => otherPosts.push(json));
+
+  return {
+    props: {
+      recentPostData,
+      otherPosts,
+    },
+  };
 }

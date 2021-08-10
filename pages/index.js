@@ -12,18 +12,10 @@ import data from "../public/placeholder.json";
 import Footer from "../components/footer/footer";
 import Pagination from "../components/pagination/pagination";
 
-//state
-
 export default function Home({ recentPostData, otherPosts }) {
-  // const [post, setPost] = useState(null);
-
-  // useEffect(() => {
-  // fetch("https://jsonplaceholder.typicode.com/posts/")
-  //   .then((response) => response.json())
-  //   .then((json) => setPost(json));
-  // }, []);
   return (
     <>
+      {console.log(otherPosts)}
       <Head>
         <title>Late Me | blog</title>
         <meta name="Late Me" content="Dwi Darma Blog's" />
@@ -43,7 +35,7 @@ export default function Home({ recentPostData, otherPosts }) {
           <Hero />
         </article>
         <News allPosts={recentPostData} />
-        <Pagination />
+        <Pagination seeMore={otherPosts} />
       </content>
       <footer>
         <Footer />
@@ -57,11 +49,10 @@ export async function getStaticProps() {
     return element;
   });
 
-  let otherPosts = [];
+  // let otherPosts = null;
 
-  fetch("https://jsonplaceholder.typicode.com/posts/")
-    .then((response) => response.json())
-    .then((json) => otherPosts.push(json));
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
+  const otherPosts = await res.json();
 
   return {
     props: {

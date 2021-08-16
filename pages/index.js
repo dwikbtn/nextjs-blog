@@ -12,7 +12,7 @@ import data from "../public/placeholder.json";
 import Pagination from "../components/pagination/pagination";
 import Footer from "../components/footer/footer";
 
-export default function Home({ recentPostData, otherPosts }) {
+export default function Home({ articleData }) {
   return (
     <>
       <Head>
@@ -31,8 +31,8 @@ export default function Home({ recentPostData, otherPosts }) {
       <content>
         <Hero />
         <article>
-          <News allPosts={recentPostData} />
-          <Pagination seeMore={otherPosts} />
+          <News allPosts={articleData} />
+          <Pagination seeMore={articleData} />
         </article>
       </content>
       <footer>
@@ -43,19 +43,18 @@ export default function Home({ recentPostData, otherPosts }) {
 }
 
 export async function getStaticProps() {
-  const recentPostData = data.posts.map((element) => {
+  const articleData = data.posts.map((element) => {
     return element;
   });
 
   // let otherPosts = null;
 
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
-  const otherPosts = await res.json();
+  // const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
+  // const otherPosts = await res.json();
 
   return {
     props: {
-      recentPostData,
-      otherPosts,
+      articleData,
     },
   };
 }

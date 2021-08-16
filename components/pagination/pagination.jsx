@@ -18,7 +18,7 @@ export default function Pagination({ seeMore }) {
           <Image src={downArrow} alt="see more" />
         </a>
       </div>
-      <div>{articleLoad && <MoreArticle morePages={seeMore} />}</div>
+      {articleLoad && <MoreArticle morePages={seeMore} />}
     </>
   );
 }

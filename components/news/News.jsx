@@ -87,7 +87,6 @@ function News({ allPosts }) {
           <Image
             src={filteredHighlight[0].imageURL}
             alt={filteredHighlight[0].title}
-            layout="fixed"
             width={500}
             height={439}
           />

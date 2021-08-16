@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import Hero from "../components/hero/hero";
 import Logo from "../components/Logo/Logo";
@@ -9,33 +9,31 @@ import Social from "../components/socmedIcon/Social";
 import style from "../styles/pages/index.module.scss";
 
 import data from "../public/placeholder.json";
-import Footer from "../components/footer/footer";
 import Pagination from "../components/pagination/pagination";
+import Footer from "../components/footer/footer";
 
 export default function Home({ recentPostData, otherPosts }) {
   return (
     <>
-      {console.log(otherPosts)}
       <Head>
-        <title>Late Me | blog</title>
-        <meta name="Late Me" content="Dwi Darma Blog's" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Late Me | Dwi Personal Blog</title>
+        <meta name="personal Blog" content="blog contains tech and stuffs" />
       </Head>
       <nav className={style.nav + " containers"}>
         <Logo />
         <SearchBar />
         <div className={style["nav-menu"]}>
           <p>Home</p>
-          <p>articles</p>
+          <p>Articles</p>
         </div>
         <Social />
       </nav>
       <content>
+        <Hero />
         <article>
-          <Hero />
+          <News allPosts={recentPostData} />
+          <Pagination seeMore={otherPosts} />
         </article>
-        <News allPosts={recentPostData} />
-        <Pagination seeMore={otherPosts} />
       </content>
       <footer>
         <Footer />

@@ -17,14 +17,14 @@ export default function Home({ articleData }) {
     <>
       <Head>
         <title>Late Me | Dwi Personal Blog</title>
-        <meta name="personal Blog" content="blog contains tech and stuffs" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <nav className={style.nav + " containers"}>
         <Logo />
         <SearchBar />
         <div className={style["nav-menu"]}>
-          <p>Home</p>
-          <p>Articles</p>
+          <a>Home</a>
+          <a>Articles</a>
         </div>
         <Social />
       </nav>

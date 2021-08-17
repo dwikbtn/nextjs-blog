@@ -1,15 +1,29 @@
+@import "media_queries";
 .containers {
-  margin: 0 85px;
+  margin: 0 5.313rem;
+  @include mobile {
+    margin: 0 5%;
+  }
 }
 .article-containers {
-  margin: 100px 85px;
+  margin: 6.25rem 5.313rem;
+  @include mobile {
+    margin: 0 5%;
+  }
 }
 //grid
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 35px;
+  gap: 2.5rem 2.188rem;
   text-align: center;
+  @include tablet {
+    gap: 3%;
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .grid-bg {
   grid-column: 1/4;

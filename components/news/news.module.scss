@@ -17,18 +17,18 @@
   display: flex;
   .article-text {
     width: 50%;
-    padding: 45px;
+    padding: 2.813rem;
     display: flex;
     flex-direction: column;
   }
   .article-title {
     @include h-style;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
   .article-content {
     @include p-style;
-    margin: 25px auto;
+    margin: 2.25rem auto;
   }
   .article-footer {
     display: flex;
@@ -54,17 +54,17 @@
 .article-others {
   .article-title {
     @include h-style;
-    font-size: 20px;
-    line-height: 24px;
-    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-top: 1.25rem;
   }
   .article-content {
     @include p-style;
-    padding: 18px;
+    padding: 1.125rem;
   }
   .article-footer {
     display: flex;
-    padding: 18px;
+    padding: 1.125rem;
     justify-content: space-between;
     .date {
       @include p-style;
@@ -79,12 +79,12 @@
   align-items: center;
   .article-text {
     width: 50%;
-    padding: 100px 65px;
+    padding: 6.25rem 4.063rem;
     .article-title {
       @include h-style;
-      font-size: 20px;
-      line-height: 24px;
-      margin-top: 20px;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin-top: 1.25rem;
     }
     .article-content {
       @include p-style;

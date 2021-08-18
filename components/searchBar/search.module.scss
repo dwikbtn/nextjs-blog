@@ -1,3 +1,5 @@
+@import "../../styles/main.scss";
+
 .searchBar {
   display: flex;
   margin: auto;
@@ -10,6 +12,10 @@
     border-left-style: hidden;
     border-bottom-style: groove;
     background-color: rgb(255, 255, 255);
+    @include tablet {
+      width: 50px;
+      height: 20px;
+    }
   }
 
   .noOutline:focus {
@@ -19,6 +25,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 14px;
+    }
 
     /* 600 */
     color: #718096;

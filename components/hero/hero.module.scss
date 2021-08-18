@@ -29,4 +29,32 @@
       object-fit: cover;
     }
   }
+  @include tablet {
+    padding: 4.5rem 5%;
+    font-size: 1.625rem;
+    // display: flex;
+    // flex-direction: column;
+  }
+  .hero-pic {
+    margin: 5%;
+    width: 100%;
+    font-size: 1.625rem;
+
+    img {
+      object-fit: cover;
+    }
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .hero-text {
+      padding: 5%;
+      width: 100%;
+      text-align: start;
+    }
+    .hero-pic {
+      order: -1;
+    }
+  }
 }

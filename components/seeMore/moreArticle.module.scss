@@ -26,4 +26,8 @@
       @include p-style;
     }
   }
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }

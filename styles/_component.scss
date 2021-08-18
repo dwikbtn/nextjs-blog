@@ -9,4 +9,7 @@
   box-sizing: border-box;
   box-shadow: 0px 5px 4px rgba(221, 221, 221, 0.25);
   border-radius: 5px;
+  @include mobile {
+    margin-bottom: 5%;
+  }
 }

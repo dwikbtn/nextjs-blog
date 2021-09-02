@@ -16,12 +16,16 @@ function News({ allPosts }) {
           </div>
           <div className={style["article-content"]}>
             <p>
-              {allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ..."}
+              <Link href={`/${allPosts[0]._id}`}>
+                {allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ..."}
+              </Link>
             </p>
           </div>
           <div className={style["article-footer"]}>
             <div className={style.date}>{allPosts[0].date}</div>
-            <div className={style["read-more"]}>Read more</div>
+            <div className={style["read-more"]}>
+              <Link href={`/${allPosts[0]._id}`}>Read more</Link>
+            </div>
           </div>
         </div>
         <div className={style["image-container-latest"]}>
@@ -51,14 +55,22 @@ function News({ allPosts }) {
           </div>
           <div className={style["article-text"]}>
             <div className={style["article-title"]}>
-              <h1>{post.title}</h1>
+              <h1>
+                <Link href={`/${post._id}`}>{post.title}</Link>
+              </h1>
             </div>
             <div className={style["article-content"]}>
-              <p>{post.context.split(" ").slice(0, 30).join(" ") + " ..."}</p>
+              <p>
+                <Link href={`/${post._id}`}>
+                  {post.context.split(" ").slice(0, 30).join(" ") + " ..."}
+                </Link>
+              </p>
             </div>
             <div className={style["article-footer"]}>
               <div className={style.date}>{post.date}</div>
-              <div className={style["read-more"]}>Read more</div>
+              <div className={style["read-more"]}>
+                <Link href={`/${post._id}`}>Read more </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -73,17 +85,27 @@ function News({ allPosts }) {
       <div className={style["article-highlight"]}>
         <div className={style["article-text"]}>
           <div className={style["article-title"]}>
-            <h1>{filteredHighlight[0].title}</h1>
+            <h1>
+              <Link href={`/${filteredHighlight[0]._id}`}>
+                {filteredHighlight[0].title}
+              </Link>
+            </h1>
           </div>
           <div className={style["article-content"]}>
             <p>
-              {filteredHighlight[0].context.split(" ").slice(0, 50).join(" ") +
-                " ..."}
+              <Link href={`/${filteredHighlight[0]._id}`}>
+                {filteredHighlight[0].context
+                  .split(" ")
+                  .slice(0, 50)
+                  .join(" ") + " ..."}
+              </Link>
             </p>
           </div>
           <div className={style["article-footer"]}>
             <div className={style.date}>{filteredHighlight[0].date}</div>
-            <div className={style["read-more"]}>Read more</div>
+            <div className={style["read-more"]}>
+              <Link href={`/${filteredHighlight[0]._id}`}>Read more</Link>
+            </div>
           </div>
         </div>
         <div className={style["image-container-highlight"]}>

@@ -42,7 +42,6 @@ export const getStaticProps = async ({ params }) => {
 export default function Article({ news }) {
   return (
     <div>
-      {console.log(news[0].title)}
       <nav className={hstyle.nav + " containers"}>
         <Logo />
         <SearchBar />
@@ -53,7 +52,7 @@ export default function Article({ news }) {
         <Social />
       </nav>
       <p>test</p>
-      <p>{news.title}</p>
+      <h1>{news[0].title}</h1>
     </div>
   );
 }

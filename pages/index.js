@@ -5,6 +5,7 @@ import Logo from "../components/Logo/Logo";
 import News from "../components/news/News";
 import SearchBar from "../components/searchBar/SearchBar";
 import Social from "../components/socmedIcon/Social";
+import Link from "next/link";
 
 import style from "../styles/pages/index.module.scss";
 
@@ -23,18 +24,18 @@ export default function Home({ articleData }) {
         <Logo />
         <SearchBar />
         <div className={style["nav-menu"]}>
-          <a>Home</a>
-          <a>Articles</a>
+          <Link href="/">Home</Link>
+          <Link href="/#news">Articles</Link>
         </div>
         <Social />
       </nav>
-      <content>
+      <section>
         <Hero />
         <article>
           <News allPosts={articleData} />
           <Pagination seeMore={articleData} />
         </article>
-      </content>
+      </section>
       <footer>
         <Footer />
       </footer>

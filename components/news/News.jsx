@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./news.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 function News({ allPosts }) {
   allPosts[0].context.split(" ").slice(0, 30).join(" ") + " ...";
@@ -9,7 +10,9 @@ function News({ allPosts }) {
       <div className={style["article-latest"]}>
         <div className={style["article-text"]}>
           <div className={style["article-title"]}>
-            <h1>{allPosts[0].title}</h1>
+            <h1>
+              <Link href={`/${allPosts[0]._id}`}>{allPosts[0].title}</Link>
+            </h1>
           </div>
           <div className={style["article-content"]}>
             <p>
@@ -95,7 +98,7 @@ function News({ allPosts }) {
     </div>
   );
   return (
-    <article className={"containers grid-container " + style.news}>
+    <article id="news" className={"containers grid-container " + style.news}>
       <div className={"grid-bg " + style["news-latest"]}>{articleLatest}</div>
       {posts}
       <div className={"grid-bg " + style["news-highlight"]}>

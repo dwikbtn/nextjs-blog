@@ -1,17 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import Hero from "../components/hero/hero";
-import Logo from "../components/Logo/Logo";
 import News from "../components/news/News";
-import SearchBar from "../components/searchBar/SearchBar";
-import Social from "../components/socmedIcon/Social";
-import Link from "next/link";
-
-import style from "../styles/pages/index.module.scss";
 
 import data from "../public/placeholder.json";
 import Pagination from "../components/pagination/pagination";
 import Footer from "../components/footer/footer";
+import Wrapper from "../components/Wrapper";
 
 export default function Home({ articleData }) {
   return (
@@ -20,25 +15,15 @@ export default function Home({ articleData }) {
         <title>Late Me | Dwi Personal Blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <nav className={style.nav + " containers"}>
-        <Logo />
-        <SearchBar />
-        <div className={style["nav-menu"]}>
-          <Link href="/">Home</Link>
-          <Link href="/#news">Articles</Link>
-        </div>
-        <Social />
-      </nav>
-      <section>
-        <Hero />
-        <article>
-          <News allPosts={articleData} />
-          <Pagination seeMore={articleData} />
-        </article>
-      </section>
-      <footer>
-        <Footer />
-      </footer>
+      <Wrapper>
+        <section>
+          <Hero />
+          <article>
+            <News allPosts={articleData} />
+            <Pagination seeMore={articleData} />
+          </article>
+        </section>
+      </Wrapper>
     </>
   );
 }

@@ -1,9 +1,7 @@
-import Logo from "../components/Logo/Logo";
-import SearchBar from "../components/searchBar/SearchBar";
-import Social from "../components/socmedIcon/Social";
-import Link from "next/link";
-import hstyle from "../styles/pages/index.module.scss";
+import Wrapper from "../components/Wrapper";
+import Head from "next/head";
 import data from "../public/placeholder.json";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
   // const res = await fetch()
@@ -32,27 +30,26 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
-// const posts = data.posts;
-// console.log(posts._id);
-// const something = data.posts.map((post, i) => {
-//   return {
-//     paramsz: { id: post._id },
-//   };
-// });
+
 export default function Article({ news }) {
   return (
-    <div>
-      <nav className={hstyle.nav + " containers"}>
-        <Logo />
-        <SearchBar />
-        <div className={hstyle["nav-menu"]}>
-          <Link href="/">Home</Link>
-          <Link href="/#news">Articles</Link>
+    <>
+      <Head>
+        <title>{news[0].title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Wrapper>
+        <div>
+          <Image
+            src={news[0].imageURL}
+            alt={news[0].title + " image heading"}
+            width="500"
+            height="500"
+          />
         </div>
-        <Social />
-      </nav>
-      <p>test</p>
-      <h1>{news[0].title}</h1>
-    </div>
+        <h1>{news[0].title}</h1>
+        <p>{news[0].context}</p>
+      </Wrapper>
+    </>
   );
 }

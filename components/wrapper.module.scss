@@ -1,0 +1,33 @@
+@import "../styles/main.scss";
+
+.nav {
+  margin-top: 2.188rem;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu {
+    margin-right: 3rem;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.118rem;
+    a {
+      display: inline;
+      margin: 0 2.25rem;
+    }
+    a:hover {
+      color: #6b46c1;
+    }
+  }
+  @include tablet {
+    margin-right: 0;
+    font-size: 0.875rem;
+    a {
+      margin: 0 5%;
+    }
+  }
+}
